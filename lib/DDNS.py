@@ -39,7 +39,7 @@ class DDNS(object):
         # record_id
         self.record_id = self.get_record_id()
 
-        # self.ip
+        # get ip, oip
         self.ip = self.get_ip()
         self.oip = self.old_ip()
 
