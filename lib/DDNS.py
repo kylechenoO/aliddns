@@ -39,7 +39,7 @@ class DDNS(object):
         # record_id
         self.record_id = self.get_record_id()
 
-        # get ip, oip
+        # self.ip
         self.ip = self.get_ip()
         self.oip = self.old_ip()
 
@@ -84,9 +84,9 @@ class DDNS(object):
  
     # update dns record with alidns api
     def update(self):
-        clt = client.AcsClient(self.access_key_id, self.access_Key_secret, 'cn-hangzhou')
+        clt = client.AcsClient(self.access_key_id, self.access_key_secret, 'cn-hangzhou')
         request = UpdateDomainRecordRequest.UpdateDomainRecordRequest()
-        request.set_RR(self.domain)
+        request.set_RR(self.prefix)
         request.set_Type(self.type)
         request.set_Value(self.ip)
         request.set_RecordId(self.record_id)
