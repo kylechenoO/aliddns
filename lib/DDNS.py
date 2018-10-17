@@ -50,7 +50,7 @@ class DDNS(object):
  
     # get ip from ip.cn
     def get_ip(self):
-	    get_ip_method = os.popen('curl -s ip.cn')
+        get_ip_method = os.popen('curl -s https://hacking-linux.com/getip/index.php')
 	    get_ip_responses = get_ip_method.readlines()[0]
 	    get_ip_pattern = re.compile(r'\d+\.\d+\.\d+\.\d+')
 	    get_ip_value = get_ip_pattern.findall(get_ip_responses)[0]
